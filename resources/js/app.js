@@ -1,10 +1,19 @@
 import './bootstrap';
 import '../css/app.css';
+// import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap-vue/dist/bootstrap-vue.css';
 
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
+
+// import Vue from 'vue';
+import DataTablesLib from 'datatables.net'; 
+import DataTable from 'datatables.net-vue3';
+
+ 
+DataTable.use(DataTablesLib);
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
@@ -15,6 +24,9 @@ createInertiaApp({
         return createApp({ render: () => h(App, props) })
             .use(plugin)
             .use(ZiggyVue)
+            .component('DataTable', DataTable) 
+            // .use(BootstrapVue)
+            // .use(IconsPlugin)
             .mount(el);
     },
     progress: {

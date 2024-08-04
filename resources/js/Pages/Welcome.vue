@@ -51,11 +51,6 @@ function handleImageError() {
 <template>
     <Head title="Welcome" />
     <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50" :style="{backgroundImage: 'url(../storage/img/bg.jpg)'}">
-        <!-- <img
-            id="background"
-            class="absolute -left-20 top-0 max-w-[877px]"
-            src="http://127.0.0.1:8000/public/storage/img/bg.jpg"
-        /> -->
         <div
             class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white"
         >
@@ -74,32 +69,6 @@ function handleImageError() {
                             />
                         </svg>
                     </div>
-                    <!-- <nav v-if="canLogin" class="-mx-3 flex flex-1 justify-end">
-                        <Link
-                            v-if="$page.props.auth.user"
-                            :href="route('dashboard')"
-                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                        >
-                            Dashboard
-                        </Link>
-
-                        <template v-else>
-                            <Link
-                                :href="route('login')"
-                                class="rounded-md px-3 py-2 text-white ring-1 ring-transparent transition hover:text-white/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                            >
-                                Log in
-                            </Link>
-
-                            <Link
-                                v-if="canRegister"
-                                :href="route('register')"
-                                class="rounded-md px-3 py-2 text-white ring-1 ring-transparent transition hover:text-white/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                            >
-                                Register
-                            </Link>
-                        </template>
-                    </nav> -->
                 </header>
 
                 <main>
@@ -120,8 +89,7 @@ function handleImageError() {
                                         autofocus
                                         autocomplete="username"
                                     />
-
-                                    <!-- <InputError class="mt-2" :message="form.errors.email" /> -->
+                                    
                                     <InputError class="mt-2" :message="form.errors.username" />
                                 </div>
 
