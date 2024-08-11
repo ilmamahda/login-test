@@ -32,6 +32,7 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
+        $request->session()->flush('dashboard');
 
         return redirect()->intended(route('dashboard', absolute: false));
     }
@@ -47,6 +48,11 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
+        // if ($request->session()->invalidate() == false || $request->session()->regenerateToken() == false) {
+        //     return redirect()->intended(route('dashboard'));
+        // } else {
+
+        // }
         return redirect('/');
     }
 }
